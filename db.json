@@ -1,0 +1,11 @@
+{
+  "blogs": [
+    {
+      "title": "Title1",
+      "text": "some text 1",
+      "author": "Ivan",
+      "avatar": "http://localhost:4200/assets/christmas.jpg",
+      "id": 1
+    }
+  ]
+}

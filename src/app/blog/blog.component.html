@@ -1,0 +1,8 @@
+<main>
+    <div class="blog" *ngFor="let blog of blogs">
+        <div [ngStyle] = "{'background-image': 'url('+blog.avatar+')'}" class="avatar"></div>
+        <h3>{{blog.author | uppercase}}</h3>
+        <h2>{{blog.title}}</h2>
+        <p>{{blog.text}}</p>
+    </div>
+</main>

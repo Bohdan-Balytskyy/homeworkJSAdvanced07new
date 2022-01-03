@@ -1,0 +1,66 @@
+@import "../shared/styles/base";
+@import "../shared/styles/mixins";
+main {
+  display: flex;
+  justify-content: space-between;
+  aside {
+    width: 15%;
+    input[type="button"] {
+      @include buttons(lighten(black, 15%), black, grey, 100%);
+    }
+  }
+  .main {
+    width: 84%;
+    &__box {
+      margin-bottom: 1rem;
+      input[type="text"] {
+        @include textinput(100%, 2rem);
+      }
+      textarea {
+        @include textinput(100%);
+      }
+      input[type="button"] {
+        @include buttons(lighten(black, 15%), black, grey, 4rem);
+      }
+    }
+    table {
+      border-spacing: 0px;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      width: 100%;
+      table-layout: fixed;
+      tr {
+        height: 3rem;
+        width: 100%;
+        &:hover {
+          background-color: lightgrey;
+        }
+      }
+      th {
+        border-top: 1px solid lightgray;
+        border-bottom: 1px solid lightgray;
+      }
+      .th3 {
+        width: 45%;
+      }
+      .th2 {
+        width: 20%;
+      }
+      .th4,
+      .th5,
+      .th6 {
+        width: 10%;
+      }
+      .th1 {
+        width: 5%;
+      }
+      td {
+        text-align: center;
+        overflow: hidden;
+      }
+      button {
+        @include buttons(lighten(black, 15%), black, grey, 4rem);
+      }
+    }
+  }
+}

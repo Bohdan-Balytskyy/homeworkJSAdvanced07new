@@ -1,0 +1,50 @@
+<main>
+    <aside>
+        <input type="button" value="Blogs">
+    </aside>
+    <div class="main">
+        <div class="main__box">
+            <input type="text" name="" id="" placeholder="title here..." [(ngModel)] = "blog.title">
+        </div>
+        <div class="main__box">
+            <textarea name="" id="" rows="5" placeholder="text here..." [(ngModel)] = "blog.text"></textarea>
+        </div>
+        <div class="main__box">
+            <input type="text" name="" id="" placeholder="author here..." [(ngModel)] = "blog.author">
+        </div>
+        <div class="main__box">
+            <input type="button" value="Add" *ngIf ='!isEdit' (click)= "add()">
+            <input type="button" value="Save edit" *ngIf ='isEdit' (click)= "saveEdit()">
+        </div>
+        <div class="main__table">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="th1">#</th>
+                        <th class="th2">Title</th>
+                        <th class="th3">Text</th>
+                        <th class="th4">Author</th>
+                        <th class="th5">Edit</th>
+                        <th class="th6">DELETE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let blog of blogs; let i = index">
+                        <td class="th1">{{i+1}}</td>
+                        <td class="th2">{{blog.title}}</td>
+                        <td class="th3">{{blog.text}}</td>
+                        <td class="th4">{{blog.author}}</td>
+                        <td class="th5">
+                            <button type="button" (click)="edit(blog)">Edit</button>
+                        </td>
+                        <td class="th6">
+                            <button (click)="delete(blog.id)"
+                                [disabled]="isEdit">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</main>
